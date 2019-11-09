@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
+
+  <title>Homewayz</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="mt-3 text-danger collapse" id="create-failed-alert"></div>
+    <div class="mt-3 text-success collapse" id="create-success-alert"></div>
+  </div>
+  <!-- /container -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+    function getUrlParameters() {
+      var vars = [],
+        hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    }
+
+    function successResponse() {
+      $('#create-failed-alert').hide();
+      $('#create-success-alert').html('<h2>Thanks for your reply!<br/><br/>Forwarding to the Homewayz homepage in 5 seconds.</h2>').show();
+      setTimeout(() => {
+        location.href = 'https://homewayz.io';
+      }, 5000);
+    }
+
+    function duplicateOrRescheduled() {
+      $('#create-failed-alert').hide();
+      $('#create-success-alert').html('<h2>Thanks for your reply! Unfortunately this link has already been set or has expired.<br/><br/>Forwarding to the Homewayz homepage in 5 seconds.</h2>').show();
+      setTimeout(() => {
+        location.href = 'https://homewayz.io';
+      }, 5000);
+    }
+
+    function notAuthorized() {
+      $('#create-failed-alert').html(`<h2>Error: The embedded authorization is not valid for this request.<br/><br/>Please contact support at <a href="mailto:support@homewayz.io">support@homewayz.io</a></h2>`).show();
+    }
+
+    function unknownError(e) {
+      $('#create-failed-alert').html(`<h2>Error: ${JSON.stringify(e)}<br/><br/>Please contact support at <a href="mailto:support@homewayz.io">support@homewayz.io</a></h2>`).show();
+    }
+
+    function execRequest(data) {
+      const dst = decodeURIComponent(getUrlParameters()['url']);
+      if (!dst.startsWith('https://api.homewayz.io') && !dst.startsWith('http://localhost:8888')) {
+        unknownError(`Unsupported redirect URL: ${dst}`);
+        return;
+      }
+      $.ajax(dst, {
+        data: data,
+        contentType: 'application/json',
+        type: 'PUT',
+        statusCode: {
+          200: successResponse,
+          401: notAuthorized,
+          404: unknownError,
+          412: duplicateOrRescheduled,
+          500: unknownError
+        }
+      });
+    }
+
+    (function () {
+      execRequest();
+    })();
+  </script>
+</body>
+
+</html>

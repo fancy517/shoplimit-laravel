@@ -1,0 +1,83 @@
+$primary: blue;
+$secondary: red;
+
+//got from ClientRouteDetails
+$saved: #af2cc5;
+$accept: #1e9254;
+$decline: #b50000;
+$number: #373737;
+$modal-icon: #cc3371;
+$color-grey: #ccc;
+
+// Additional Route state color variables
+$completed: #9e9e9e;
+$hwayzLink: #13a8dd;
+
+$hwayzRetroBlue: #cae3e3;
+$hwayzLinkWater: #dbeaf4;
+$hwayzLightGray: #dedede;
+$hwayzDarkerGray: #656565;
+$hwayzMediumGray: #909090;
+$hwayzDarkGray: #787878;
+$hwayzBlack: #373737;
+$hwayzSun: #F56445;
+$hwayzRed: #FF4346;
+$hwayzHover: #5a859f;
+$hwayzTeal: #289A95;
+$hwayzLightGreen: #64bbc0;
+$hwayzGreen: #58a76c;
+$hwayzDarkenGreen: #4da449;
+$hwayzBlue: #00acc1;
+$hwayzViolet: #914781;
+$hwayzVioletLight: #8a5cb7;
+$hwayzWhite: #fff;
+$hwayzKhaki: #6dc4a5;
+$hwayzPink: #bb68cd;
+$hwayzOrange: #ed6c6b;
+$hwayzIndicator: #4da449;
+$hwayzPurple: #cd00cc;
+$hwayzPinkOrange: #ff6368;
+$hwayzYellow: #ffac32;
+/*
+  Main UI component colors
+*/
+$hwayzF8: #f8f8f8;
+$hwayzF7: #f7f7f7;
+$hwayzfb: #fbfbfb;
+$hwayz9: #999;
+$hwayzec: #ececec;
+$hwayzce: #cecece;
+$hwayzBackgroundColor: #f4f8f9;
+$hwayzShadow: #ababab;
+$hwayzNavigationTab: #e91e63;
+$hwayzLink: #00D3D5;
+$hwayzBorder: #fafafa;
+$hwayzNested: #236a62;
+$hwayzCalendarEventContainer: #66ccff;
+// Agent
+$hwyzSidebarAgent: #aac5d6;
+$hwyzHeaderAgent: #fefefe;
+// Client
+$hwyzSidebarClient: #fefefe;
+$hwyzHeaderClient: #fefefe;
+$hwyzAccountTabClient: #fefefe;
+
+:export {
+  hwayzHover: $hwayzHover;
+  hwayzTeal: $hwayzTeal;
+  hwayzViolet: $hwayzViolet;
+  hwayzDarkenGreen: $hwayzDarkenGreen;
+  hwayzVioletLight: $hwayzVioletLight;
+  modalIcon: $modal-icon;
+  hwayzBlack: $hwayzBlack;
+  hwayzLightGreen: $hwayzLightGreen;
+  hwayzBlue: $hwayzBlue;
+  primary: $primary;
+  secondary: $secondary;
+  saved: $saved;
+  hwayzLink: $hwayzLink;
+  pending: $hwayzYellow;
+  confirmed: $hwayzBlue;
+  scheduled: $hwayzGreen;
+  completed: $completed;
+}

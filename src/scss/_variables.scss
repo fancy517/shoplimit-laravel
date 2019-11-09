@@ -1,0 +1,175 @@
+// Global Variables
+@import url("https://fonts.googleapis.com/css?family=Roboto|Open+Sans");
+// iMPORT THE COLOR VARIABLES
+@import "@/scss/_colors.scss";
+@import "@/scss/_breakpoints.scss";
+
+$number: (
+  family: "Roboto, Open Sans, sans-serif !important",
+  size: 0.875em !important
+);
+
+$text: (
+  boldText: bold !important
+);
+
+// Component styling
+// Element variables
+$icon: (
+  font-small: 1em,
+  font-medium: 1.5em,
+  font-large: 2em,
+  font-medium-blown: 8em,
+  font-blown: 10em
+);
+%disable-selection {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+// Component styling
+
+// Extended element classes
+%plannerTable {
+  tr {
+    height: 100px;
+  }
+  td {
+    vertical-align: middle;
+  }
+  button {
+    box-shadow: none !important;
+  }
+}
+
+%clientName {
+  font-weight: 400 !important;
+  text-align: left !important;
+  font-size: 1.4rem;
+  color: #236a62;
+  text-transform: capitalize;
+  padding-left: 1rem;
+  a {
+    color: #236a62 !important;
+  }
+}
+
+%button {
+  text-transform: uppercase;
+}
+
+%button-ready {
+  background-color: #ff1212;
+  color: white;
+  -webkit-box-shadow: #cecece 0px 2px 2px 1px !important;
+  box-shadow: #cecece 0px 2px 2px 1px !important;
+}
+
+// Used as a class for :hover when it has to be custom set, eg. in the Client header
+%on-hover {
+  background-color: #efefef !important;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 2000ms;
+}
+/* MODAL CLASSES */
+%modal {
+  font-size: 1.5rem; // this should be 18px
+  padding: 3rem 5rem;
+  @media screen and (max-width: $bp-phone-only) {
+    padding: 1.5rem 2rem;
+  }
+}
+
+%modal__button-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: #8b8b8b !important;
+  font-size: 2.8rem;
+}
+
+%modal__title {
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+}
+
+%modal__icon {
+  border: 1px solid #e5e5e5;
+  color: $modal-icon !important;
+  border-radius: 50%;
+  margin: 2.5rem;
+  padding: 35px;
+  font-size: 88px;
+  @media screen and (max-width: $bp-phone-only) {
+    padding: 25px;
+    font-size: 75px !important;
+    margin: 1.5rem;
+  }
+}
+
+%modal__button {
+  background-color: #cc3371;
+  margin: 0 auto;
+  border-radius: 15px;
+  height: 5.5rem;
+  width: 100%;
+  max-width: 200px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+%modal__text-field {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+$modal: (
+  border-radius: 5px
+);
+
+%modal__v-text-field__slot {
+  border: 1px solid #bfbfbf !important;
+  border-radius: 5px 5px 0 0;
+  max-height: 4rem !important;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: inherit;
+}
+
+/* CARD HOME */
+%card__hover-link {
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+%card__hover-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+$hwayzFont10pt: 10pt;
+
+$hwayzFont0em8: 0.8em;
+$hwayzFont1em2: 1.2em;
+$hwayzFont1em5: 1.5em;
+$hwayzFont10em: 10em;
+
+$hwayzFont0rem7: 0.7rem;
+$hwayzFont0rem8: 0.8rem;
+$hwayzFont0rem9: 0.9rem;
+$hwayzFont1rem: 1rem;
+$hwayzFont1rem1: 1.1rem;
+$hwayzFont1rem2: 1.2rem;
+$hwayzFont1rem3: 1.3rem;
+$hwayzFont1rem4: 1.4rem;
+$hwayzFont1rem5: 1.5rem;
+$hwayzFont1rem6: 1.6rem;
+$hwayzFont1rem8: 1.8rem;
+$hwayzFont2rem: 2rem;
+$hwayzFont3rem: 3rem;

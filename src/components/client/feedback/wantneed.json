@@ -1,0 +1,32 @@
+[
+  {
+    "match": false,
+    "name": "Large Master Bath (Dual Vanities)",
+    "wantNeed": "Want"
+  },
+  {
+    "match": false,
+    "name": "Open floor plan - Home Layout",
+    "wantNeed": "Want"
+  },
+  {
+    "match": false,
+    "name": "Curb Appeal",
+    "wantNeed": "Need"
+  },
+  {
+    "match": false,
+    "name": "Multiple Living Spaces",
+    "wantNeed": "Need"
+  },
+  {
+    "match": false,
+    "name": "Two Story",
+    "wantNeed": "Need"
+  },
+  {
+    "match": false,
+    "name": "Minimum Car Garage - 2",
+    "wantNeed": "Need"
+  }
+]
