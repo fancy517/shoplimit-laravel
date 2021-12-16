@@ -4,6 +4,20 @@ This test project is a hands-on approach to getting a feel for your problem-solv
 
 Much of this project has already been pre-designed and built for you. Follow the setup instructions below and take a brief moment to explore and analyze the existing code, it'll help you with the tasks below.
 
+## Project Setup
+
+1. Clone this project to your local environment.
+
+2. Copy `.env.example` to `.env`
+
+3. Configure `.env` file
+
+4. Run: `composer install`
+
+5. Run: `php artisan migrate`
+
+6. Run: `php artisan db:seed`
+
 ## Project Scope
 
 Due to the Covid-19 pandemic, major grocery store chains are only allowing X amount of people inside to shop at a time at their locations. Each grocery store location keeps a real-time ledger of active, completed and pending shoppers.
@@ -11,20 +25,6 @@ Due to the Covid-19 pandemic, major grocery store chains are only allowing X amo
 Shoppers have the ability to check-in while they await in line. For this check-in process, the store is only collecting a first name, last name and email from each shopper. Upon check-in, the shopper enters a queue until it is their turn to shop.
 
 There is a grocery store employee located at the exit. As shoppers leave, they check-out with this employee.
-
-The following tasks are designed to test your problem-solving skills on an existing project. You have full creative freedom on how you want to accomplish the following tasks.
-
-## Project Setup
-
-1. Clone this project to your local environment.
-
-2. Copy `.env.example` to `.env`
-   
-3. Configure `.env` file
-
-4. Run: `php artisan migrate`
-
-5. Run: `php artisan db:seed`
 
 ## Tasks
 
