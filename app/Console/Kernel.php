@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Models\Shopper\Shopper;
+use App\Models\Store\location\Location;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,7 +26,16 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $checkInLowLimit = now()->modify('-2 hours')->format('Y-m-d H:i:s');
+            Shopper::where('check_in', '<', $checkInLowLimit)
+                ->where('status_id', 1)
+                ->update(['status_id'=> 2, 'check_out' => now()]);
+            $locations = Location::all();
+            foreach ($locations as $loc) {
+                $loc->acceptShoppers();
+            }
+        })->everyMinute();
     }
 
     /**

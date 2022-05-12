@@ -59,4 +59,17 @@ class Location extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function acceptShoppers() {
+
+        $activeShopperCount = Shopper::where('location_id', $this->id)
+            ->where('status_id', 1)
+            ->count();
+        
+        Shopper::where('location_id', $this->id)
+            ->where('status_id', 3)
+            ->orderBy('check_in', 'desc')
+            ->take($this->shopper_limit - $activeShopperCount)
+            ->update(['status_id'=> 1]);
+    }
 }
